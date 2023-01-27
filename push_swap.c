@@ -2,7 +2,9 @@
 
 int main(int argc, char **argv)
 {
-    /*t_num   list;
-	list.num_list = */
-    ft_separate(argv);
+    t_num   num;
+
+    num.count = 0;
+    num.argc = argc;
+    ft_separate(&num, argv);
 }
