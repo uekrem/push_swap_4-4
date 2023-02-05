@@ -25,3 +25,18 @@ int	ft_atoi(char *nptr)
 	value *= mark;
 	return (value);
 }
+
+int	ft_num_small(t_num *num)
+{
+	int	i;
+	int	index;
+
+	index = 0;
+	i = -1;
+	while (++i < num->counta)
+	{
+		if (num->num_lista[index] > num->num_lista[i])
+			index = i;
+	}
+	return (index);
+}

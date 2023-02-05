@@ -9,21 +9,21 @@ void    ft_sa(t_num *num)
         temp = num->num_lista[0];
         num->num_lista[0] = num->num_lista[1];
         num->num_lista[1] = temp;
+        printf("sa\n");
     }
-    printf("sa\n");
 }
 
 void    ft_sb(t_num *num)
 {
     int temp;
 
-    if (num->counta > 1)
+    if (num->countb > 1)
     {
         temp = num->num_listb[0];
         num->num_listb[0] = num->num_listb[1];
         num->num_listb[1] = temp;
+        printf("sb\n");
     }
-    printf("sb\n");
 }
 
 void    ft_ss(t_num *num)
@@ -53,9 +53,9 @@ void    ft_rb(t_num *num)
 
     index.i = 0;
     temp = num->num_listb[0];
-    while (++index.i < num->counta)
+    while (++index.i < num->countb)
         num->num_listb[index.i - 1] = num->num_listb[index.i];
-    num->num_listb[num->counta - 1] = temp;
+    num->num_listb[num->countb - 1] = temp;
     printf("rb\n");
 }
 
@@ -84,7 +84,7 @@ void    ft_rrb(t_num *num)
     t_temp  index;
     int     temp;
 
-    index.i = num->counta;
+    index.i = num->countb;
     temp = num->num_listb[index.i - 1];
     while (--index.i > 0)
         num->num_listb[index.i] = num->num_listb[index.i - 1];
