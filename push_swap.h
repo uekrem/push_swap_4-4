@@ -7,9 +7,11 @@
 #include <stdio.h>
 typedef struct  s_num
 {
-    int *num_list;
+    int *num_lista;
+    int *num_listb;
     int argc;
-    int count;
+    int counta;
+    int countb;
 }   t_num;
 
 typedef struct  t_temp
@@ -22,5 +24,14 @@ typedef struct  t_temp
 void	ft_separate(t_num *num, char **str);
 char	**ft_split(t_num *num, char **str);
 int     ft_atoi(char *nptr);
+void    ft_sa(t_num *num);
+void    ft_sb(t_num *num);
+void    ft_ss(t_num *num);
+void    ft_ra(t_num *num);
+void    ft_rb(t_num *num);
+void    ft_rr(t_num *num);
+void    ft_rra(t_num *num);
+void    ft_rrb(t_num *num);
+void    ft_rrr(t_num *num);
 
 #endif
