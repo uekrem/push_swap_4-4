@@ -33,7 +33,21 @@ void    ft_three(t_num *num)
 
 void    ft_four(t_num *num)
 {
+    int small;
 
+    small = ft_num_small(num);
+    if (small == 1)
+        ft_sa(num);
+    else if (small == 2)
+    {
+        ft_ra(num);
+        ft_ra(num);
+    }
+    else if (small == 3)
+        ft_rra(num);
+    ft_pb(num);
+    ft_three(num);
+    ft_pa(num);
 }
 
 void    ft_part(t_num *num)
