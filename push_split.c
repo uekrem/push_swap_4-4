@@ -45,7 +45,7 @@ char	**ft_split(t_num *num, char **str)
 	int             i;
 
 	i = 1;
-	strings = (char **)malloc(sizeof(char *) * (num->count + 1));
+	strings = (char **)malloc(sizeof(char *) * (num->counta + 1));
 	while (i < num->argc)
 	{
         first = str[i];

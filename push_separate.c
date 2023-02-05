@@ -14,7 +14,6 @@ void    ft_num_checker(t_num *num, char *str)
     t_temp  temp;
 
     temp.i = 0;
-    num->counta = 0;
     while (str[temp.i])
     {
         while (str[temp.i] == 32 || str[temp.i] == '\t')
@@ -38,6 +37,7 @@ void	ft_separate(t_num *num, char **str)
     t_temp  temp;
 
     temp.i = 0;
+    num->counta = 0;
     while (str[++temp.i])
         ft_num_checker(num, str[temp.i]);
     strings = ft_split(num, str);

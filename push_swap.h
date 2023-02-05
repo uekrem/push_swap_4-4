@@ -33,5 +33,7 @@ void    ft_rr(t_num *num);
 void    ft_rra(t_num *num);
 void    ft_rrb(t_num *num);
 void    ft_rrr(t_num *num);
+void    ft_pa(t_num *num);
+void    ft_pb(t_num *num);
 
 #endif
