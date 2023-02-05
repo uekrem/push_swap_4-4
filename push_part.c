@@ -50,6 +50,29 @@ void    ft_four(t_num *num)
     ft_pa(num);
 }
 
+void    ft_five(t_num *num)
+{
+    int small;
+
+    small = ft_num_small(num);
+    if (small == 1)
+        ft_sa(num);
+    else if (small == 2)
+    {
+        ft_ra(num);
+        ft_ra(num);
+    }
+    else if (small == 3 || small == 4)
+    {
+        if (small == 3)
+            ft_rra(num);
+        ft_rra(num);
+    }
+    ft_pb(num);
+    ft_four(num);
+    ft_pa(num);
+}
+
 void    ft_part(t_num *num)
 {
     if (num->counta == 2)
@@ -58,8 +81,8 @@ void    ft_part(t_num *num)
         ft_three(num);
     else if (num->counta == 4)
         ft_four(num);
-    /*else if (num->counta == 5)
+    else if (num->counta == 5)
         ft_five(num);
-    else if (num->counta > 5)
+    /*else if (num->counta > 5)
         ft_ult_radix(num);*/
 }
