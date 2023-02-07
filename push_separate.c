@@ -2,8 +2,9 @@
 
 void	ft_close(t_num *num)
 {
-    free(num->num_lista);
-    free(num->num_listb);
+    //free(num->num_lista);
+    //free(num->num_listb);
+    (void)  num;
     exit(0);
 }
 
