@@ -4,8 +4,6 @@ void	ft_close(t_num *num)
 {
     free(num->num_lista);
     free(num->num_listb);
-    write(1, "Closed\n", 7);
-    system("leaks a.out");
     exit(0);
 }
 
@@ -43,8 +41,12 @@ void	ft_separate(t_num *num, char **str)
     strings = ft_split(num, str);
     num->num_lista = malloc(sizeof(int) * num->counta);
     num->num_listb = malloc(sizeof(int) * num->counta);
+    num->num_bubble = malloc(sizeof(int) * num->counta);
     temp.i = -1;
     while (strings[++temp.i])
         num->num_lista[temp.i] = ft_atoi(strings[temp.i]);
+    temp.i = -1;
+    while (strings[++temp.i])
+        num->num_bubble[temp.i] = ft_atoi(strings[temp.i]);
     num->countb = 0;
 }

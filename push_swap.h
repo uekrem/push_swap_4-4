@@ -9,6 +9,7 @@ typedef struct  s_num
 {
     int *num_lista;
     int *num_listb;
+    int *num_bubble;
     int argc;
     int counta;
     int countb;
@@ -36,6 +37,8 @@ void    ft_rrr(t_num *num);
 void    ft_pa(t_num *num);
 void    ft_pb(t_num *num);
 void    ft_part(t_num *num);
-int	ft_num_small(t_num *num);
+int     ft_num_small(t_num *num);
+void    ft_radix(t_num *num);
+void	ft_close(t_num *num);
 
 #endif

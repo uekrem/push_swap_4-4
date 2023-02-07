@@ -83,6 +83,6 @@ void    ft_part(t_num *num)
         ft_four(num);
     else if (num->counta == 5)
         ft_five(num);
-    /*else if (num->counta > 5)
-        ft_ult_radix(num);*/
+    else if (num->counta > 5)
+        ft_radix(num);
 }
