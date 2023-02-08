@@ -1,10 +1,17 @@
 #include "push_swap.h"
 
-int	ft_atoi(char *nptr)
+int	ft_int_check(long value)
 {
-	int	i;
-	int	mark;
-	int	value;
+	if (value > 2147483647 || value < -2147483648)
+		return (0);
+	return (1);
+}
+
+int	ft_atoi(char *nptr, t_num *num)
+{
+	int		i;
+	int		mark;
+	long	value;
 
 	value = 0;
 	mark = 1;
@@ -23,7 +30,9 @@ int	ft_atoi(char *nptr)
 		i++;
 	}
 	value *= mark;
-	return (value);
+	if (ft_int_check(value))
+		return (value);
+	return (ft_error(num));
 }
 
 int	ft_num_small(t_num *num)
@@ -39,4 +48,32 @@ int	ft_num_small(t_num *num)
 			index = i;
 	}
 	return (index);
+}
+
+int	ft_sort_check(t_num *num)
+{
+	int	i;
+	int	flag;
+
+	flag = 0;
+	i = -1;
+	while (++i < num->counta - 1)
+        if (num->num_lista[i] < num->num_lista[i + 1])
+            flag++;
+	return (flag);
+}
+
+int	ft_repeat_num(t_num *num)
+{
+	t_temp	temp;
+
+	temp.i = -1;
+	while (++temp.i < num->counta - 1)
+	{
+		temp.j = temp.i;
+		while (++temp.j < num->counta)
+			if (num->num_lista[temp.i] == num->num_lista[temp.j])
+				return (1);
+	}
+	return (0);
 }
