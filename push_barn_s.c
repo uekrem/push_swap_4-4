@@ -9,7 +9,7 @@ void    ft_sa(t_num *num)
         temp = num->num_lista[0];
         num->num_lista[0] = num->num_lista[1];
         num->num_lista[1] = temp;
-        printf("sa\n");
+        write(1, "sa\n", 3);
     }
 }
 
@@ -22,7 +22,7 @@ void    ft_sb(t_num *num)
         temp = num->num_listb[0];
         num->num_listb[0] = num->num_listb[1];
         num->num_listb[1] = temp;
-        printf("sb\n");
+        write(1, "sb\n", 3);
     }
 }
 
@@ -30,5 +30,5 @@ void    ft_ss(t_num *num)
 {
     ft_sa(num);
     ft_sb(num);
-    printf("ss\n");
+    write(1, "ss\n", 3);
 }

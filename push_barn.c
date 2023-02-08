@@ -10,7 +10,7 @@ void    ft_rra(t_num *num)
     while (--index.i > 0)
         num->num_lista[index.i] = num->num_lista[index.i - 1];
     num->num_lista[0] = temp;
-    printf("rra\n");
+    write(1, "rra\n", 4);
 }
 
 void    ft_rrb(t_num *num)
@@ -23,14 +23,14 @@ void    ft_rrb(t_num *num)
     while (--index.i > 0)
         num->num_listb[index.i] = num->num_listb[index.i - 1];
     num->num_listb[0] = temp;
-    printf("rrb\n");
+    write(1, "rrb\n", 4);
 }
 
 void    ft_rrr(t_num *num)
 {
     ft_rra(num);
     ft_rrb(num);
-    printf("rrr\n");
+    write(1, "rrr\n", 4);
 }
 
 void    ft_pa(t_num *num)
@@ -47,7 +47,7 @@ void    ft_pa(t_num *num)
         while (++temp.i < num->countb)
             num->num_listb[temp.i - 1] = num->num_listb[temp.i];
         num->countb -= 1;
-        printf("pa\n");  
+        write(1, "pa\n", 3);  
     }
 }
 
@@ -65,6 +65,6 @@ void    ft_pb(t_num *num)
         while (++temp.i < num->counta)
             num->num_lista[temp.i - 1] = num->num_lista[temp.i];
         num->counta -= 1;
-        printf("pb\n");  
+        write(1, "pb\n", 3);  
     }
 }

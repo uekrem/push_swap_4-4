@@ -10,7 +10,7 @@ void    ft_ra(t_num *num)
     while (++index.i < num->counta)
         num->num_lista[index.i - 1] = num->num_lista[index.i];
     num->num_lista[num->counta - 1] = temp;
-    printf("ra\n");
+    write(1, "ra\n", 3);
 }
 
 void    ft_rb(t_num *num)
@@ -23,12 +23,12 @@ void    ft_rb(t_num *num)
     while (++index.i < num->countb)
         num->num_listb[index.i - 1] = num->num_listb[index.i];
     num->num_listb[num->countb - 1] = temp;
-    printf("rb\n");
+    write(1, "rb\n", 3);
 }
 
 void    ft_rr(t_num *num)
 {
     ft_ra(num);
     ft_rb(num);
-    printf("rr\n");
+    write(1, "rr\n", 3);
 }
