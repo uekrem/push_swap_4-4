@@ -3,12 +3,15 @@
 
 #include <stdlib.h>
 #include <unistd.h>
+
+#include <stdio.h>
 typedef struct  s_num
 {
     int     *num_lista;
     int     *num_listb;
     int     *num_bubble;
     char    **strings;
+    int     dont_len;
     int     argc;
     int     counta;
     int     countb;
@@ -42,5 +45,7 @@ int     ft_error(t_num *num);
 void    ft_close(t_num *num);
 int     ft_sort_check(t_num *num);
 int     ft_repeat_num(t_num *num);
+int     ft_find_bubble(t_num *num, int find_value);
+int	    ft_check_bitwise(t_num *num, int bitwise);
 
 #endif
