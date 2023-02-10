@@ -13,12 +13,5 @@ int main(int argc, char **argv)
     if (ft_repeat_num(&num))
         ft_error(&num);
     ft_part(&num);
-
-    /*int i;
-    i = -1;
-    while (++i < num.counta)
-        printf("%d ", num.num_lista[i]);*/
-
     ft_close(&num);
-    exit(0);
 }

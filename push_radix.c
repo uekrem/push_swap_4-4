@@ -46,6 +46,28 @@ int     ft_find_bubble(t_num *num, int find_value)
     return (0);
 }
 
+void    ft_psh_or_sty(t_num *num, int max_bit, int bitwise)
+{
+    t_temp  temp;
+    int     b_len;
+
+    b_len = num->countb;
+    temp.i = -1;
+    if (bitwise < max_bit - 1)
+    {
+        while (++temp.i < b_len)
+        {
+            if ((ft_find_bubble(num, num->num_listb[0]) >> (bitwise + 1) & 1) == 0)
+                ft_rb(num);
+             else
+                ft_pa(num);
+        }
+    }
+    else
+        while (num->countb)
+            ft_pa(num);
+}
+
 void    ft_radix(t_num *num)
 {
     t_temp  temp;
@@ -55,14 +77,10 @@ void    ft_radix(t_num *num)
     temp.i = -1;
     max_bit = ft_maxbit(num);
     ft_bubble(num);
-
     num->dont_len = num->counta;
-    int b_len;
-
     while (++temp.i < max_bit)
     {
         temp.j = -1;
-        temp.k = -1;
         fix_len = ft_check_bitwise(num, temp.i) + 1; 
         while (++temp.j < fix_len)
         {
@@ -71,19 +89,6 @@ void    ft_radix(t_num *num)
             else 
                 ft_pb(num);
         }
-        b_len = num->countb;
-        if (temp.i < max_bit - 1)
-        {
-            while (++temp.k < b_len)
-            {
-                if ((ft_find_bubble(num, num->num_listb[0]) >> (temp.i + 1) & 1) == 0)
-                    ft_rb(num);
-                else
-                    ft_pa(num);
-            }
-        }
-        else
-            while (num->countb)
-                ft_pa(num);
+        ft_psh_or_sty(num, max_bit, temp.i);
     }
 }

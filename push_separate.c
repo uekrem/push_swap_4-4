@@ -37,11 +37,11 @@ void    ft_num_checker(t_num *num, char *str)
         while (str[temp.i] == 32 || str[temp.i] == '\t')
             temp.i++;
         if ((str[temp.i] == '-' || str[temp.i] == '+')
-            && (str[temp.i + 1] >= '0' && str[temp.i + 1] <= '9'))          // tek bir - + önleme
+            && (str[temp.i + 1] >= '0' && str[temp.i + 1] <= '9'))         
             temp.i++;
         while (str[temp.i] >= '0' && str[temp.i] <= '9')
             temp.i++;
-        if (str[temp.i - 1] >= '0' && str[temp.i - 1] <= '9')               //sona sadece boşlıklar koyuca +1 karakter
+        if (str[temp.i - 1] >= '0' && str[temp.i - 1] <= '9')           
             num->counta += 1;
         if (!(str[temp.i] == 32 || str[temp.i] == '\t' 
             || str[temp.i] == '\0'))

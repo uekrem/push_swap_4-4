@@ -9,7 +9,8 @@ SRCS =		push_barn_r.c \
 				push_split.c \
 				push_swap.c \
 				push_utils.c \
-				push_radix.c 
+				push_radix.c \
+				push_utils_2.c 
 OBJS = $(SRCS:.c=.o)
 
 RM		    := rm -rf
