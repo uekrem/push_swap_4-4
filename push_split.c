@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_split.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hekrem <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/17 14:09:12 by hekrem            #+#    #+#             */
+/*   Updated: 2023/02/17 14:09:13 by hekrem           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	check_separator(char c)
 {
-	if ( c == 10 || c == 9 || c == 32)
+	if (c == 10 || c == 9 || c == 32)
 		return (1);
 	if (c == 0)
 		return (1);
@@ -39,29 +51,28 @@ char	*ft_word(char *str)
 
 char	**ft_split(t_num *num, char **str)
 {
-	char	        **strings;
-    char            *first;
-    static int      src;
-	int             i;
+	char		**strings;
+	char		*first;
+	static int	src;
+	int			i;
 
-	i = 1;
+	i = 0;
 	strings = (char **)malloc(sizeof(char *) * (num->counta + 1));
-	while (i < num->argc)
+	while (++i < num->argc)
 	{
-        first = str[i];
-        while (*first)
-        {
-            while (*first != '\0' && check_separator(*first))
-                first++;
-            if (*first != '\0')
-            {
-                strings[src] = ft_word(first);
-                src++;
-            }
-            while (*first && !check_separator(*first))
-                first++;
-        }
-        i++;
+		first = str[i];
+		while (*first)
+		{
+			while (*first != '\0' && check_separator(*first))
+				first++;
+			if (*first != '\0')
+			{
+				strings[src] = ft_word(first);
+				src++;
+			}
+			while (*first && !check_separator(*first))
+				first++;
+		}
 	}
 	strings[src] = 0;
 	return (strings);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hekrem <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/17 14:10:07 by hekrem            #+#    #+#             */
+/*   Updated: 2023/02/17 14:10:07 by hekrem           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_int_check(long value)
@@ -58,8 +70,8 @@ int	ft_sort_check(t_num *num)
 	flag = 0;
 	i = -1;
 	while (++i < num->counta - 1)
-        if (num->num_lista[i] < num->num_lista[i + 1])
-            flag++;
+		if (num->num_lista[i] < num->num_lista[i + 1])
+			flag++;
 	return (flag);
 }
 
